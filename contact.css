@@ -74,3 +74,25 @@
  .signup-landscape > img { animation:none !important; }
  .submit-spinner { animation:none; border-color:#0a0a0a; }
 }
+/* Wind bends the tree from its roots; a separate crown layer follows the breeze. */
+.signup-landscape > .signup-canopy { mask-image:linear-gradient(#000 0%,#000 48%,transparent 76%); pointer-events:none; }
+.signup-motion .signup-landscape > img { animation:signup-tree-wind 10s ease-in-out infinite; transform-origin:80% 90%; }
+@keyframes signup-tree-wind {
+  0%,100% { transform:rotate(-.7deg) skewX(-.25deg) scale(1.025); }
+  35% { transform:rotate(.9deg) skewX(.45deg) scale(1.025); }
+  62% { transform:rotate(-.25deg) skewX(-.1deg) scale(1.025); }
+  82% { transform:rotate(.4deg) skewX(.2deg) scale(1.025); }
+}
+.signup-paused .signup-landscape > img { animation-play-state:paused; }
+@media (prefers-reduced-motion:reduce) {
+ .signup-landscape > .signup-canopy { display:none; filter:none; }
+ .signup-landscape > img { animation:none !important; }
+}
+
+.signup-motion .signup-landscape > .signup-canopy { animation:signup-canopy-wind 7s ease-in-out infinite; transform-origin:80% 78%; }
+@keyframes signup-canopy-wind {
+  0%,100% { transform:rotate(-.8deg) skewX(-.3deg) scale(1.025); }
+  38% { transform:rotate(1.1deg) skewX(.65deg) scale(1.025); }
+  72% { transform:rotate(-.2deg) skewX(-.1deg) scale(1.025); }
+}
+.signup-paused .signup-landscape > .signup-canopy { animation-play-state:paused; }

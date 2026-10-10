@@ -236,3 +236,25 @@ main::before { z-index:0; }
 
 .hero-loop-caption { font-size:11px; color:#aab9ce; }
 @media (max-width:640px) { .hero-loop-caption { display:none; } }
+/* The chip now moves as a physical object, independently of the traffic. */
+.context-core { transform-box:fill-box; transform-origin:50% 60%; }
+.motion-enabled .context-hero .context-core { animation:chip-hover 6s ease-in-out infinite; }
+@keyframes chip-hover {
+  0%,100% { transform:translateY(3px) rotate(-1.5deg); }
+  50% { transform:translateY(-12px) rotate(1.5deg); }
+}
+.chip-sheen { transform-box:view-box; }
+.motion-enabled .chip-sheen { animation:chip-light-sweep 5s ease-in-out infinite; }
+@keyframes chip-light-sweep {
+  0%,10% { transform:translate(-200px,-100px); opacity:0; }
+  25% { opacity:1; }
+  65%,100% { transform:translate(240px,130px); opacity:0; }
+}
+.context-hero.motion-paused :is(.context-core,.chip-sheen) { animation-play-state:paused !important; }
+.motion-enabled .mobile-core .brand-mark { animation:mobile-chip-hover 6s ease-in-out infinite; }
+@keyframes mobile-chip-hover { 0%,100% { transform:translateY(2px) rotate(-6deg); } 50% { transform:translateY(-5px) rotate(6deg); } }
+.context-hero.motion-paused .mobile-core .brand-mark { animation-play-state:paused !important; }
+@media (prefers-reduced-motion:reduce) {
+ .context-hero .context-core,.chip-sheen,.mobile-core .brand-mark { animation:none !important; transform:none; }
+ .chip-sheen { display:none; }
+}
