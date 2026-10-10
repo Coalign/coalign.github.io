@@ -1,26 +1,18 @@
-# Coalign films
+# Coalign hero film
 
-Two silent Remotion compositions authored for this website. No stock footage or generated images are used. The deployed page serves H.264 MP4s and PNG posters; React and Remotion are authoring dependencies only.
+An original silent Remotion/Three.js composition authored for this website. No stock footage or generated images are used. The deployed page serves H.264 MP4s and PNG posters; React and Remotion are authoring dependencies only.
 
 ## Alignment
 
-- Source: `motion/src/index.jsx`, composition `Alignment`.
-- `alignment.mp4`: 1600 × 900, 24fps, 216 frames / nine seconds, designed to loop seamlessly.
-- `alignment-poster.png`: frame 126 from the same composition.
-- Original illustration: blue and violet context streams converge on a metallic review tile carrying Coalign's upright paired diagonal mark from the canonical `assets/mark.svg`. This film illustrates shared context.
+- Source: `motion/src/Alignment.jsx`, composition `Alignment`.
+- `alignment.mp4`: 1920 × 1080, 60fps, 720 frames / twelve seconds, designed to loop seamlessly.
+- `alignment-poster.png`: frame 210 from the same composition.
+- Original illustration: a physically rendered beveled chip, studio lighting, extruded canonical `assets/mark.svg` angled with the chip, curved blue-violet context routes, and moving signal trails. This illustrates shared context rather than product activity.
 
-## Development walkthrough
+## Archived development walkthrough
 
-- Source: `motion/src/ReviewWalkthrough.jsx`, composition `ReviewWalkthrough`.
-- `review-walkthrough.mp4`: 1280 × 800, 24fps, 378 frames / 15.75 seconds.
-- `review-poster.png`: frame 285 from the same composition.
-- Continuous source recording: `motion/public/walkthrough/recording.webm`; timing and provenance in `recording.json`. Capture source is `motion/capture-walkthrough.py`.
-- Recorded from the actual Coalign/platform development React interface with controlled synthetic API responses. No customer data or live credentials are used. Setup and introductory content are hidden; a dark presentation stylesheet and canonical Coalign logo match the website.
-- The cursor, click feedback, source expansion, scrolling, and acceptance action are recorded continuously in the browser. Remotion trims the setup and encodes the recording; there are no screenshot cuts or black fades. The end returns to the initial source view for the loop.
-- Review acceptance, commit, and merge remain separate human actions. This is a development demonstration rather than production activity.
+The product walkthrough video is removed from the live page and public deployment at the user's request. Its continuous recording and composition source remain in the private development repository for reference, with controlled synthetic data and no customer data or live credentials. It can be rendered separately with `REMOTION_FILM=ReviewWalkthrough npm run render`.
 
-Both website videos loop automatically, including under reduced motion as explicitly requested. Hidden tabs pause playback; returning tabs resume. Diagram animation and scroll smoothing respect reduced motion independently.
+The hero loops automatically, including under reduced motion as requested. Hidden tabs pause playback; returning tabs resume. Diagram animation and scrolling respect reduced motion independently.
 
-Reproduce both videos from `motion/` using `npm ci` then `npm run render`. Set `REMOTION_BROWSER_EXECUTABLE` to an existing compatible Chromium binary if required. The renderer reuses the checked-in continuous recording; it does not fetch live application data.
-
-Source licensing: original website motion code and Coalign/platform development UI; repository owners retain applicable rights. Remotion and React packages retain their own licenses.
+Reproduce from `motion/` with `npm ci` and `npm run render`. Set `REMOTION_BROWSER_EXECUTABLE` to a compatible Chromium if required. Three.js uses the ANGLE renderer. Original motion artwork belongs to the repository owner; Remotion, React, Three.js, and React Three Fiber retain their respective licenses.

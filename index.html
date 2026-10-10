@@ -13,9 +13,9 @@
   <link rel="preload" href="assets/fonts/geist-variable.ttf" as="font" type="font/ttf" crossorigin>
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="assets/vendor/lenis/lenis.css">
-  <link rel="stylesheet" href="cinematic.css">
+  <link rel="stylesheet" href="cinematic.css?v=cinema-4">
   <script src="assets/vendor/lenis/lenis.min.js" defer></script>
-  <script src="script.js?v=product-4" defer></script>
+  <script src="script.js?v=cinema-4" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -45,12 +45,12 @@
   <main id="main">
     <section class="cinematic-hero" id="top" aria-labelledby="hero-title">
       <figure class="hero-film" aria-label="Illustration of separate context streams converging in Coalign">
-        <video id="alignment-film" autoplay loop muted playsinline preload="auto" poster="assets/motion/alignment-poster.png?v=logo-2" aria-hidden="true" tabindex="-1"><source src="assets/motion/alignment.mp4?v=logo-2" type="video/mp4"></video>
+        <video id="alignment-film" autoplay loop muted playsinline preload="auto" poster="assets/motion/alignment-poster.png?v=cinema-4" aria-hidden="true" tabindex="-1"><source src="assets/motion/alignment.mp4?v=cinema-4" type="video/mp4"></video>
       </figure>
       <div class="container cinematic-copy">
         <h1 id="hero-title">Code with agents.<br>Review with context.</h1>
         <p class="cinematic-description">Coalign brings branch intent, source evidence, and checks into one review. Give your team the context behind every code change.</p>
-        <div class="cinematic-actions"><a class="button button-white" href="#walkthrough">See it in action<svg class="icon" aria-hidden="true"><use href="#arrow"/></svg></a><a class="button button-outline" href="mailto:shanjanuary@gmail.com?subject=Coalign%20inquiry" data-contact>Get in touch</a></div>
+        <div class="cinematic-actions"><a class="button button-white" href="#product">See it in action<svg class="icon" aria-hidden="true"><use href="#arrow"/></svg></a><a class="button button-outline" href="mailto:shanjanuary@gmail.com?subject=Coalign%20inquiry" data-contact>Get in touch</a></div>
       </div>
       <div class="container cinematic-bottom">
         <div class="film-description"><span class="status-dot"></span><span>Separate branches. One shared context.</span></div>
@@ -62,15 +62,6 @@
       <div><svg class="icon" aria-hidden="true"><use href="#source"/></svg><span>Agent context</span><p>Evidence across branches.</p></div>
       <svg class="context-connector" viewBox="0 0 60 24" aria-hidden="true"><path d="M1 12h54m-6-5 6 5-6 5"/></svg>
       <div><svg class="icon" aria-hidden="true"><use href="#shield"/></svg><span>One shared review</span><p>Your team decides what ships.</p></div>
-    </section>
-    <section class="container walkthrough-section" id="walkthrough" aria-labelledby="walkthrough-title">
-      <div class="section-heading split-heading"><h2 id="walkthrough-title">From a proposed change<br>to an informed decision.</h2><p>Follow a review in Coalign’s development application. Inspect the sources, read the exact patch, and make the call.</p></div>
-      <figure class="walkthrough-figure">
-        <div class="walkthrough-chrome"><span><svg class="brand-mark" aria-hidden="true"><use href="#logo"/></svg>Coalign / Review workspace</span><span class="walkthrough-status"><span class="status-dot"></span>Development demo</span></div>
-        <video id="review-film" autoplay loop muted playsinline preload="metadata" poster="assets/motion/review-poster.png?v=continuous-3" aria-label="Coalign development demo: a cursor opens captured sources, inspects the exact patch and accepts it for review. Synthetic data; commit and merge remain separate human actions."><source src="assets/motion/review-walkthrough.mp4?v=continuous-3" type="video/mp4"></video>
-        <figcaption>Development application demo with synthetic review data. Acceptance, commit, and merge are separate decisions.</figcaption>
-      </figure>
-      <div class="walkthrough-steps"><div><span class="step-index">1</span><span>Inspect the source</span></div><div><span class="step-index">2</span><span>Review the exact patch</span></div><div><span class="step-index">3</span><span>Make a human decision</span></div></div>
     </section>
     <section class="container product-section" id="product" aria-labelledby="product-title">
       <div class="section-heading split-heading"><h2 id="product-title">Go beyond the diff.</h2><div><p>Try a review yourself. See both branches’ requirements, inspect the proposed patch, and keep the open questions visible.</p><span class="demo-instruction">Explore the tabs. Then mark the example reviewed.</span></div></div>
@@ -146,7 +137,16 @@
     <section class="container value-section" aria-labelledby="value-title">
       <div class="section-heading"><h2 id="value-title">The reasoning stays<br>with the work.</h2><p>Turn context that lives in separate sessions into evidence your team can use.</p></div>
       <div class="value-grid">
-        <article class="value-main"><div class="intent-graph" role="img" aria-label="A requirement is linked to the originating decision, branch revision, and proposed patch."><span class="graph-node graph-requirement">Requirement<span>Preserve request identity</span></span><span class="graph-node graph-decision">Decision<span>Cache the response body</span></span><span class="graph-node graph-revision"><code>a71c9f2</code><span>Exact revision</span></span><span class="graph-node graph-patch">Proposed patch<span>Evidence stays attached</span></span><svg viewBox="0 0 580 280" preserveAspectRatio="none" aria-hidden="true"><path d="M180 69H246Q274 69 274 105V140Q274 174 314 174H390M180 223H246Q274 223 274 185V160M250 32V57Q250 69 266 69H274V105"/><path class="flow-signal" pathLength="100" d="M180 69H246Q274 69 274 105V140Q274 174 314 174H390"/><path class="flow-signal flow-signal-secondary" pathLength="100" d="M180 223H246Q274 223 274 185V160"/><circle class="graph-junction" cx="274" cy="140" r="4"/></svg></div><div class="value-copy"><h3>Context that travels with the code.</h3><p>Connect a requirement to the decision, source, and revision behind it. Give the next developer a place to start.</p></div></article>
+        <article class="value-main"><div class="intent-graph" role="img" aria-label="Requirement, decision and exact revision connect directly to a proposed patch."><svg viewBox="0 0 520 300" aria-hidden="true">
+          <path d="M262 82V198H344M172 153H244Q262 153 262 171M172 243H244Q262 243 262 225V198"/>
+          <path class="flow-signal" pathLength="100" d="M172 153H244Q262 153 262 171V198H344"/>
+          <path class="flow-signal flow-signal-secondary" pathLength="100" d="M262 82V198H344"/>
+          <circle class="graph-junction" cx="262" cy="198" r="3"/>
+          <g class="graph-card"><rect x="16" y="124" width="156" height="58" rx="5"/><text x="30" y="148">Requirement</text><text class="graph-caption" x="30" y="166">Preserve request identity</text></g>
+          <g class="graph-card"><rect x="16" y="214" width="156" height="58" rx="5"/><text x="30" y="238">Decision</text><text class="graph-caption" x="30" y="256">Cache the response body</text></g>
+          <g class="graph-card"><rect x="196" y="24" width="132" height="58" rx="5"/><text class="graph-code" x="210" y="48">a71c9f2</text><text class="graph-caption" x="210" y="66">Exact revision</text></g>
+          <g class="graph-card"><rect x="344" y="169" width="160" height="58" rx="5"/><text x="358" y="193">Proposed patch</text><text class="graph-caption" x="358" y="211">Evidence stays attached</text></g>
+        </svg></div><div class="value-copy"><h3>Context that travels with the code.</h3><p>Connect a requirement to the decision, source, and revision behind it. Give the next developer a place to start.</p></div></article>
         <article class="value-evidence"><div class="evidence-art" aria-hidden="true"><span class="evidence-art-heading"><svg class="icon"><use href="#source"/></svg>Constraint provenance</span><div><span>Source</span><code>developer requirement</code></div><div><span>Revision</span><code>a71c9f2</code></div><div><span>Status</span><span class="evidence-status">Recorded</span></div></div><h3>Inspect the source.</h3><p>Know what is recorded, what is inferred, and what evidence is still missing.</p></article>
         <article class="value-decision"><div class="decision-art" aria-hidden="true"><span class="decision-art-status"><span class="status-dot"></span>Ready for your review</span><span class="decision-art-patch"><svg class="icon"><use href="#check"/></svg>Exact patch. Explicit checks.</span><span class="decision-art-human"><svg class="icon"><use href="#shield"/></svg>Human decision</span></div><h3>Own the final decision.</h3><p>Review the proposal and its check outcomes. Acceptance and merge stay with your team.</p></article>
       </div>

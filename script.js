@@ -90,7 +90,7 @@ function restoreUrlState() {
 window.addEventListener('popstate', restoreUrlState);
 restoreUrlState();
 
-const films = [...document.querySelectorAll('#alignment-film, #review-film')];
+const films = [...document.querySelectorAll('#alignment-film')];
 const filmPlayers = [];
 const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
 const motionSurfaces = [...document.querySelectorAll('.intent-graph, .workflow-art, .evidence-art, .decision-art, .context-strip, .research-grid')];
@@ -99,7 +99,7 @@ const motionObserver = new IntersectionObserver(entries => {
 }, {rootMargin: '80px', threshold: 0.1});
 motionSurfaces.forEach(surface => motionObserver.observe(surface));
 let smoothScroll;
-// Both films always loop, as explicitly requested. Reduced motion still
+// The hero film always loops, as explicitly requested. Reduced motion still
 // disables diagram motion and scroll smoothing, independently of video playback.
 films.forEach(film => {
   film.muted = true;
