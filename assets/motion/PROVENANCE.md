@@ -12,14 +12,15 @@ Two silent Remotion compositions authored for this website. No stock footage or 
 ## Development walkthrough
 
 - Source: `motion/src/ReviewWalkthrough.jsx`, composition `ReviewWalkthrough`.
-- `review-walkthrough.mp4`: 1280 × 800, 24fps, 360 frames / fifteen seconds.
+- `review-walkthrough.mp4`: 1280 × 800, 24fps, 378 frames / 15.75 seconds.
 - `review-poster.png`: frame 285 from the same composition.
-- Source captures: `motion/public/walkthrough/{overview,source,patch,accepted}.png`, from the actual Coalign/platform development React UI on current main, captured on 2026-10-09. Capture metadata is in `motion/public/walkthrough/capture.json`.
-- Controlled synthetic fixtures supply local API responses; no live credentials or customer data are shown. Credential setup and introductory content are hidden for presentation, and the logo matches this website.
-- The captured application retains its light UI inside the website’s black frame. Remotion animates a cursor, click rings, and transitions over the captured interface. Its logo overlay uses the same canonical `assets/mark.svg` as the website and hero; `render.mjs` copies this asset into the render workspace. The sequence shows source inspection, patch review, and review acceptance. Commit and merge remain separate human actions. This is a synthetic development demonstration, with no production footage.
+- Continuous source recording: `motion/public/walkthrough/recording.webm`; timing and provenance in `recording.json`. Capture source is `motion/capture-walkthrough.py`.
+- Recorded from the actual Coalign/platform development React interface with controlled synthetic API responses. No customer data or live credentials are used. Setup and introductory content are hidden; a dark presentation stylesheet and canonical Coalign logo match the website.
+- The cursor, click feedback, source expansion, scrolling, and acceptance action are recorded continuously in the browser. Remotion trims the setup and encodes the recording; there are no screenshot cuts or black fades. The end returns to the initial source view for the loop.
+- Review acceptance, commit, and merge remain separate human actions. This is a development demonstration rather than production activity.
 
 Both website videos loop automatically, including under reduced motion as explicitly requested. Hidden tabs pause playback; returning tabs resume. Diagram animation and scroll smoothing respect reduced motion independently.
 
-Reproduce both videos from `motion/` using `npm ci` then `npm run render`. Set `REMOTION_BROWSER_EXECUTABLE` to an existing compatible Chromium binary if required. The renderer reuses checked-in walkthrough captures; it does not fetch live application data.
+Reproduce both videos from `motion/` using `npm ci` then `npm run render`. Set `REMOTION_BROWSER_EXECUTABLE` to an existing compatible Chromium binary if required. The renderer reuses the checked-in continuous recording; it does not fetch live application data.
 
 Source licensing: original website motion code and Coalign/platform development UI; repository owners retain applicable rights. Remotion and React packages retain their own licenses.
