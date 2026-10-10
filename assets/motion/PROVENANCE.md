@@ -7,7 +7,7 @@ Two silent Remotion compositions authored for this website. No stock footage or 
 - Source: `motion/src/index.jsx`, composition `Alignment`.
 - `alignment.mp4`: 1600 × 900, 24fps, 216 frames / nine seconds, designed to loop seamlessly.
 - `alignment-poster.png`: frame 126 from the same composition.
-- Original illustration: blue and violet context streams converge on a metallic review tile carrying Coalign's paired diagonal mark. This film illustrates shared context.
+- Original illustration: blue and violet context streams converge on a metallic review tile carrying Coalign's upright paired diagonal mark from the canonical `assets/mark.svg`. This film illustrates shared context.
 
 ## Development walkthrough
 
@@ -16,7 +16,7 @@ Two silent Remotion compositions authored for this website. No stock footage or 
 - `review-poster.png`: frame 285 from the same composition.
 - Source captures: `motion/public/walkthrough/{overview,source,patch,accepted}.png`, from the actual Coalign/platform development React UI on current main, captured on 2026-10-09. Capture metadata is in `motion/public/walkthrough/capture.json`.
 - Controlled synthetic fixtures supply local API responses; no live credentials or customer data are shown. Credential setup and introductory content are hidden for presentation, and the logo matches this website.
-- The captured application retains its light UI inside the website’s black frame. Remotion animates a cursor, click rings, and transitions over the captured interface. The sequence shows source inspection, patch review, and review acceptance. Commit and merge remain separate human actions. This is a synthetic development demonstration, with no production footage.
+- The captured application retains its light UI inside the website’s black frame. Remotion animates a cursor, click rings, and transitions over the captured interface. Its logo overlay uses the same canonical `assets/mark.svg` as the website and hero; `render.mjs` copies this asset into the render workspace. The sequence shows source inspection, patch review, and review acceptance. Commit and merge remain separate human actions. This is a synthetic development demonstration, with no production footage.
 
 Both website videos loop automatically, including under reduced motion as explicitly requested. Hidden tabs pause playback; returning tabs resume. Diagram animation and scroll smoothing respect reduced motion independently.
 
