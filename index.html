@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta name="theme-color" content="#000000">
   <meta name="description" content="Shared context for teams building with coding agents. Bring branch intent, source evidence, and proposed changes into one review with Coalign.">
   <meta property="og:title" content="Coalign — Code with agents. Review with context.">
@@ -13,9 +13,11 @@
   <link rel="preload" href="assets/fonts/geist-variable.ttf" as="font" type="font/ttf" crossorigin>
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="assets/vendor/lenis/lenis.css">
-  <link rel="stylesheet" href="cinematic.css?v=chip-position-6">
+  <link rel="stylesheet" href="cinematic.css?v=mobile-8">
+  <link rel="stylesheet" href="context.css?v=autoplay-5">
+  <script src="context.js?v=autoplay-5" defer></script>
   <script src="assets/vendor/lenis/lenis.min.js" defer></script>
-  <script src="script.js?v=cinema-4" defer></script>
+  <script src="script.js?v=independent-tabs-5" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -37,23 +39,88 @@
       <a class="wordmark" href="#top" aria-label="Coalign home" translate="no"><svg class="brand-mark" aria-hidden="true"><use href="#logo"/></svg>coalign</a>
       <button class="menu-toggle" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="navigation"><span></span><span></span></button>
       <nav id="navigation" class="navigation" aria-label="Main navigation">
-        <a href="#product">Product</a><a href="#workflow">How it works</a><a href="#research">Research</a>
-        <a class="button button-compact button-white" href="mailto:shanjanuary@gmail.com?subject=Coalign%20inquiry" data-contact>Get in touch<svg class="icon" aria-hidden="true"><use href="#arrow"/></svg></a>
+        <a href="#product">Product</a><a href="#workflow">How it works</a><a href="#principles">Trust &amp; control</a>
+        <a class="button button-compact button-white" href="contact.html" data-contact>Get in touch<svg class="icon" aria-hidden="true"><use href="#arrow"/></svg></a>
       </nav>
     </div>
   </header>
   <main id="main">
-    <section class="cinematic-hero" id="top" aria-labelledby="hero-title">
-      <figure class="hero-film" aria-label="Illustration of separate context streams converging in Coalign">
-        <video id="alignment-film" autoplay loop muted playsinline preload="auto" poster="assets/motion/alignment-poster.png?v=cinema-4" aria-hidden="true" tabindex="-1"><source src="assets/motion/alignment.mp4?v=cinema-4" type="video/mp4"></video>
-      </figure>
+    <section class="cinematic-hero context-hero" id="top" aria-labelledby="hero-title">
+      <div class="context-art" role="img" aria-label="Developer requirements and agent work connect through Coalign to an evidence-backed integration review.">
+        <svg viewBox="0 0 900 720" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <defs>
+            <linearGradient id="route-gradient"><stop stop-color="#627994"/><stop offset=".55" stop-color="#c4d9f5"/><stop offset="1" stop-color="#6d61a3"/></linearGradient>
+            <linearGradient id="tile-gradient" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#242c38"/><stop offset="1" stop-color="#080b12"/></linearGradient>
+            <linearGradient id="edge-gradient"><stop stop-color="#90b9e9"/><stop offset="1" stop-color="#a78dcc"/></linearGradient>
+          </defs>
+          <g class="network-floor" fill="none" stroke="#202631" stroke-width=".7">
+            <path d="M70 500 480 270 890 500M70 550 480 320 890 550M70 600 480 370 890 600M70 650 480 420 890 650M170 700 580 470M70 700 480 470 890 700M170 450 580 680M270 395 680 625M370 340 780 570M470 285 880 515"/>
+          </g>
+          <g class="context-routes" fill="none" stroke="url(#route-gradient)" stroke-width="1.5">
+            <path id="intent-route" d="M232 205V270Q232 305 272 325L472 430"/>
+            <path id="agent-route" d="M725 205V265Q725 300 685 320L490 430"/>
+            <path id="evidence-route" d="M188 440H305Q335 440 365 450L465 475"/>
+            <path id="review-route" d="M490 492V535Q490 560 530 580L640 635"/>
+          </g>
+          <g class="context-packets" fill="#d6e6ff"></g>
+          <g class="context-ripples" fill="none" stroke="#9fbde5" stroke-width="1">
+            <path d="m350 430 140-81 140 81-140 81Z"/><path d="m350 430 140-81 140 81-140 81Z"/><path d="m350 430 140-81 140 81-140 81Z"/>
+          </g>
+          <g class="context-signals" fill="none" stroke-width="3" stroke-linecap="round">
+            <use href="#intent-route" pathLength="100"/><use href="#agent-route" pathLength="100"/><use href="#evidence-route" pathLength="100"/><use href="#review-route" pathLength="100"/>
+          </g>
+          <g class="context-document intent-document">
+            <rect x="108" y="72" width="246" height="142" rx="9"/>
+            <circle cx="131" cy="98" r="4" fill="#b2cced"/>
+            <text x="145" y="103" class="document-title">Developer intent</text>
+            <path d="M108 120h246" class="document-divider"/>
+            <text x="130" y="148">Keep request tracing intact.</text>
+            <text x="130" y="174" class="document-secondary">main / a71c9f2</text>
+            <text x="130" y="197" class="document-footnote">Requirement linked to source</text>
+          </g>
+          <g class="context-document agent-document">
+            <rect x="606" y="62" width="246" height="152" rx="9"/>
+            <circle cx="630" cy="89" r="4" fill="#bfa7e8"/>
+            <text x="644" y="94" class="document-title">Agent implementation</text>
+            <path d="M606 112h246" class="document-divider"/>
+            <text x="628" y="142">Reuse matching response bodies.</text>
+            <text x="628" y="169" class="document-secondary">feat/cache / b3e802a</text>
+            <text x="628" y="197" class="document-footnote">Reasoning stays with the branch</text>
+          </g>
+          <g class="context-document evidence-document">
+            <rect x="72" y="379" width="220" height="93" rx="9"/>
+            <text x="94" y="408" class="document-title">Source evidence</text>
+            <text x="94" y="436" class="document-secondary">Exact revisions. Linked intent.</text>
+            <circle cx="94" cy="453" r="2" fill="#a6c2e7"/><path d="M104 453h110" stroke="#344356"/>
+          </g>
+          <g class="context-core">
+            <path d="m350 430 140-81 140 81v26l-140 81-140-81Z" fill="#06080d" stroke="#424d61"/>
+            <path d="m350 430 140 81 140-81-140-81Z" fill="url(#tile-gradient)" stroke="url(#edge-gradient)" stroke-width="1.5"/>
+            <path d="m363 430 127-73 127 73-127 73Z" fill="none" stroke="#3b485d"/>
+            <g transform="translate(441 401) matrix(1,.57,-1,.57,0,0)"><image href="assets/mark.svg" width="70" height="70"/></g>
+            <text x="490" y="574" text-anchor="middle" class="core-label">Shared context</text>
+          </g>
+          <g class="context-document review-document">
+            <rect x="582" y="510" width="276" height="160" rx="9"/>
+            <text x="606" y="539" class="document-title">Integration review</text>
+            <path d="M582 553h276" class="document-divider"/>
+            <text x="606" y="578">Patch + evidence + checks</text>
+            <circle cx="611" cy="602" r="4" fill="#a7c8b0"/><text x="626" y="607" class="document-secondary">Request identity preserved</text>
+            <circle cx="611" cy="629" r="4" fill="#e4bf84"/><text x="626" y="634" class="document-secondary">Expiry needs your decision</text>
+            <text x="606" y="657" class="document-footnote">Your team decides what ships.</text>
+          </g>
+        </svg>
+        <div class="mobile-context" aria-hidden="true"><div class="mobile-sources"><span>Developer intent<small>Requirements</small></span><span>Agent work<small>Branch evidence</small></span></div><svg class="mobile-routes" viewBox="0 0 300 80" fill="none"><path d="M70 0v20q0 15 25 25l55 25M230 0v20q0 15-25 25l-55 25"/><path class="mobile-signal" d="M70 0v20q0 15 25 25l55 25M230 0v20q0 15-25 25l-55 25"/></svg><div class="mobile-core"><svg class="brand-mark"><use href="#logo"/></svg><span>Shared context</span></div><svg class="mobile-routes mobile-output" viewBox="0 0 300 40" fill="none"><path d="M150 0v40"/><path class="mobile-signal" d="M150 0v40"/></svg><div class="mobile-review"><span>One integration review</span><p>Exact patch. Linked evidence. Explicit checks.</p><small>Your team decides what ships.</small></div></div>
+      </div>
       <div class="container cinematic-copy">
-        <h1 id="hero-title">Code with agents.<br>Review with context.</h1>
-        <p class="cinematic-description">Coalign brings branch intent, source evidence, and checks into one review. Give your team the context behind every code change.</p>
-        <div class="cinematic-actions"><a class="button button-white" href="#product">See it in action<svg class="icon" aria-hidden="true"><use href="#arrow"/></svg></a><a class="button button-outline" href="mailto:shanjanuary@gmail.com?subject=Coalign%20inquiry" data-contact>Get in touch</a></div>
+        <h1 id="hero-title">The reasoning<br>behind every<br>code change.</h1>
+        <p class="cinematic-description">Your agents write code. Coalign connects the intent behind both branches, so your team can review the whole picture.</p>
+        <div class="cinematic-actions"><a class="button button-white" href="#product">Explore a review<svg class="icon" aria-hidden="true"><use href="#arrow"/></svg></a><a class="button button-outline" href="contact.html" data-contact>Talk to the team</a></div>
+        <p class="hero-availability">Built for teams working with coding agents. Currently in development.</p>
       </div>
       <div class="container cinematic-bottom">
-        <div class="film-description"><span class="status-dot"></span><span>Separate branches. One shared context.</span></div>
+        <div class="film-description"><span class="status-dot"></span><span>Different branches. One shared understanding.</span></div>
+        <span class="hero-loop-caption">Context in motion</span>
       </div>
     </section>
     <section class="container context-strip" aria-label="How Coalign connects your work">
@@ -62,6 +129,13 @@
       <div><svg class="icon" aria-hidden="true"><use href="#source"/></svg><span>Agent context</span><p>Evidence across branches.</p></div>
       <svg class="context-connector" viewBox="0 0 60 24" aria-hidden="true"><path d="M1 12h54m-6-5 6 5-6 5"/></svg>
       <div><svg class="icon" aria-hidden="true"><use href="#shield"/></svg><span>One shared review</span><p>Your team decides what ships.</p></div>
+    </section>
+    <section class="container reasoning-section" aria-labelledby="reasoning-title">
+      <div class="section-heading split-heading"><h2 id="reasoning-title">The diff shows what changed.<br>Who’s keeping track of why?</h2><p>A requirement in a conversation. A tradeoff in an agent session. A constraint on another branch. Review gets harder when the reasoning is scattered.</p></div>
+      <div class="reasoning-comparison">
+        <div class="fragmented-context"><h3>Context scattered across sessions</h3><div class="conversation-fragment"><span>Developer requirement</span><p>“Every response needs its own request ID.”</p></div><div class="conversation-fragment"><span>Agent implementation</span><p>“Cache the computed response for matching requests.”</p></div><p class="comparison-question">Will a cache hit reuse the request ID, too?</p></div>
+        <div class="connected-context"><h3>Both intentions in one review</h3><p>Reuse the response body. Attach a fresh request ID. Keep the evidence from both branches attached to the proposal.</p><ul><li><svg class="icon" aria-hidden="true"><use href="#source"/></svg>Trace the proposal back to its sources</li><li><svg class="icon" aria-hidden="true"><use href="#check"/></svg>Inspect the patch and its check outcomes</li><li><svg class="icon" aria-hidden="true"><use href="#shield"/></svg>Keep unresolved decisions with your team</li></ul><a class="text-link" href="#product">Explore this example<svg class="icon" aria-hidden="true"><use href="#arrow"/></svg></a></div>
+      </div>
     </section>
     <section class="container product-section" id="product" aria-labelledby="product-title">
       <div class="section-heading split-heading"><h2 id="product-title">Go beyond the diff.</h2><div><p>Try a review yourself. See both branches’ requirements, inspect the proposed patch, and keep the open questions visible.</p><span class="demo-instruction">Explore the tabs. Then mark the example reviewed.</span></div></div>
@@ -125,15 +199,6 @@
       </div>
 
     </section>
-    <section class="container research-section" id="research" aria-labelledby="research-title">
-      <div class="section-heading split-heading"><h2 id="research-title">AI is in the workflow.<br>Context needs to be there, too.</h2><p>Adoption is growing. Confidence still takes work. Your team needs a way to inspect the reasoning, not just the output.</p></div>
-      <div class="research-grid">
-        <article class="research-stat"><div class="stat-number">84<span>%</span></div><p>of respondents use or plan to use AI tools in development.</p><div class="stat-bar" aria-hidden="true"><span style="--value:84%"></span></div><span class="stat-caption">33,662 responses</span></article>
-        <article class="research-stat"><div class="stat-number">66<span>%</span></div><p>report frustration with AI solutions that are almost correct.</p><div class="stat-bar" aria-hidden="true"><span style="--value:66%"></span></div><span class="stat-caption">31,476 responses · Multi-select question</span></article>
-        <article class="research-stat"><div class="stat-number">46<span>%</span></div><p>distrust the accuracy of the output from AI tools.</p><div class="stat-bar" aria-hidden="true"><span style="--value:46%"></span></div><span class="stat-caption">33,244 responses</span></article>
-      </div>
-      <p class="research-source">Industry research from the <a href="https://survey.stackoverflow.co/2025/ai">2025 Stack Overflow Developer Survey<svg class="icon" aria-hidden="true"><use href="#arrow"/></svg></a>. Responses vary by question.</p>
-    </section>
     <section class="container value-section" aria-labelledby="value-title">
       <div class="section-heading"><h2 id="value-title">The reasoning stays<br>with the work.</h2><p>Turn context that lives in separate sessions into evidence your team can use.</p></div>
       <div class="value-grid">
@@ -159,14 +224,40 @@
         <li><span class="step-index">3</span><h3>Review the whole picture.</h3><p>Inspect a proposed patch with its evidence and checks. Resolve the open questions, then decide what happens next.</p><div class="workflow-art review-art" aria-hidden="true"><span><svg class="icon"><use href="#check"/></svg>Proposal &amp; checks</span><span><svg class="icon"><use href="#source"/></svg>Supporting evidence</span><span><svg class="icon"><use href="#shield"/></svg>Your decision</span></div></li>
       </ol>
     </div></section>
+    <section class="container scenarios-section" id="scenarios" aria-labelledby="scenarios-title">
+      <div class="section-heading split-heading"><h2 id="scenarios-title">Built for the moments<br>context matters most.</h2><p>Integration review is our first focus: understanding what each branch needs before deciding how the changes fit together.</p></div>
+      <div class="scenario-layout"><div class="scenario-tabs" role="tablist" aria-label="Review scenarios" aria-orientation="vertical">
+        <button id="scenario-parallel" type="button" role="tab" aria-selected="true" aria-controls="scenario-parallel-panel" tabindex="0"><svg class="icon" aria-hidden="true"><use href="#branch"/></svg><span>Parallel agent work<small>When separate changes meet</small></span></button>
+        <button id="scenario-handoff" type="button" role="tab" aria-selected="false" aria-controls="scenario-handoff-panel" tabindex="-1"><svg class="icon" aria-hidden="true"><use href="#source"/></svg><span>Developer handoffs<small>When the next person needs the why</small></span></button>
+        <button id="scenario-conflict" type="button" role="tab" aria-selected="false" aria-controls="scenario-conflict-panel" tabindex="-1"><svg class="icon" aria-hidden="true"><use href="#shield"/></svg><span>Conflicting requirements<small>When a decision needs a person</small></span></button>
+      </div><div class="scenario-panels">
+        <section id="scenario-parallel-panel" role="tabpanel" aria-labelledby="scenario-parallel" tabindex="0"><div class="scenario-branches" aria-hidden="true"><code>main</code><svg class="icon"><use href="#branch"/></svg><code>feat/cache</code></div><h3>Two valid changes.<br>One integration decision.</h3><p>One branch adds request tracing. Another introduces caching. A clean diff alone doesn’t tell you whether both requirements survive.</p><p>Bring the intent from each branch into the review, inspect the supporting evidence, and evaluate the proposed patch against both requirements.</p><a class="text-link" href="#product">Try the parallel-branch example<svg class="icon" aria-hidden="true"><use href="#arrow"/></svg></a></section>
+        <section id="scenario-handoff-panel" role="tabpanel" aria-labelledby="scenario-handoff" tabindex="0" hidden><div class="scenario-branches" aria-hidden="true"><span>Requirement</span><svg class="icon"><use href="#source"/></svg><span>Revision</span></div><h3>Keep the decisions.<br>Skip the archaeology.</h3><p>A new reviewer needs to understand why the code looks the way it does, even if they weren’t in the original agent session.</p><p>Revision-linked evidence gives them a place to start. Recorded intent, sources, and missing context stay visible alongside the change.</p><a class="text-link" href="#workflow">See how context travels<svg class="icon" aria-hidden="true"><use href="#arrow"/></svg></a></section>
+        <section id="scenario-conflict-panel" role="tabpanel" aria-labelledby="scenario-conflict" tabindex="0" hidden><div class="scenario-branches" aria-hidden="true"><span>Evidence gap</span><svg class="icon"><use href="#shield"/></svg><span>Human decision</span></div><h3>Make uncertainty<br>part of the review.</h3><p>Sometimes the requirements don’t fit together. Sometimes a necessary source or policy is missing. That needs a clear question.</p><p>Coalign’s review direction keeps conflicts and evidence gaps explicit. Changed revisions require a fresh review; acceptance and merge stay with your team.</p><a class="text-link" href="#principles">Explore the review boundaries<svg class="icon" aria-hidden="true"><use href="#arrow"/></svg></a></section>
+      </div></div>
+    </section>
+    <section class="container principles-section" id="principles" aria-labelledby="principles-title">
+      <div class="section-heading split-heading"><h2 id="principles-title">More context.<br>Clear boundaries.</h2><p>Your team should be able to inspect the evidence and understand the limits of a proposal. These principles shape Coalign’s review workflow.</p></div>
+      <dl class="principles-list"><div><dt><svg class="icon" aria-hidden="true"><use href="#shield"/></svg>Repository-scoped access</dt><dd>Capture is opt-in. Context retrieval follows repository permissions, and protected results require current access.</dd></div><div><dt><svg class="icon" aria-hidden="true"><use href="#source"/></svg>Evidence you can trace</dt><dd>Intent and proposals connect to source evidence and exact Git revisions. Missing context stays visible.</dd></div><div><dt><svg class="icon" aria-hidden="true"><use href="#check"/></svg>Explicit check outcomes</dt><dd>Passed, failed, timed-out, and not-run checks mean different things. A review keeps those distinctions clear.</dd></div><div><dt><svg class="icon" aria-hidden="true"><use href="#branch"/></svg>Human acceptance and merge</dt><dd>Review acceptance applies to the exact patch. Commit and merge remain separate decisions in your normal workflow.</dd></div></dl>
+      <div class="development-note"><span class="status-dot"></span><p><strong>A focused first release, in development.</strong> This page demonstrates the review experience with synthetic data. Live repository onboarding and end-to-end customer acceptance are still in progress.</p><a href="https://github.com/Coalign" class="text-link">Explore Coalign on GitHub<svg class="icon" aria-hidden="true"><use href="#arrow"/></svg></a></div>
+    </section>
+    <section class="container research-section" id="research" aria-labelledby="research-title">
+      <div class="section-heading split-heading"><h2 id="research-title">AI is in the workflow.<br>Context needs to be there, too.</h2><p>Adoption is growing. Confidence still takes work. Your team needs a way to inspect the reasoning, not just the output.</p></div>
+      <div class="research-grid">
+        <article class="research-stat"><div class="stat-number">84<span>%</span></div><p>of respondents use or plan to use AI tools in development.</p><div class="stat-bar" aria-hidden="true"><span style="--value:84%"></span></div><span class="stat-caption">33,662 responses</span></article>
+        <article class="research-stat"><div class="stat-number">66<span>%</span></div><p>report frustration with AI solutions that are almost correct.</p><div class="stat-bar" aria-hidden="true"><span style="--value:66%"></span></div><span class="stat-caption">31,476 responses · Multi-select question</span></article>
+        <article class="research-stat"><div class="stat-number">46<span>%</span></div><p>distrust the accuracy of the output from AI tools.</p><div class="stat-bar" aria-hidden="true"><span style="--value:46%"></span></div><span class="stat-caption">33,244 responses</span></article>
+      </div>
+      <p class="research-source">Industry research from the <a href="https://survey.stackoverflow.co/2025/ai">2025 Stack Overflow Developer Survey<svg class="icon" aria-hidden="true"><use href="#arrow"/></svg></a>. Responses vary by question.</p>
+    </section>
     <section class="container faq-section" id="questions" aria-labelledby="faq-title"><div><h2 id="faq-title">Your questions, answered.</h2><p>What to know before you take a closer look.</p></div><div class="faq-list">
       <details id="faq-what"><summary>What is Coalign?<svg class="faq-toggle" viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h12M10 4v12"/></svg></summary><p>Coalign is a shared context platform for engineering teams building with coding agents. Our first focus is integration review: connect a proposed change to the intent behind both branches, its supporting evidence, and clear human decisions.</p></details>
       <details id="faq-availability"><summary>Can I try it today?<svg class="faq-toggle" viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h12M10 4v12"/></svg></summary><p>You can explore the interactive review example on this page. Coalign itself is in development; live repository integration, deployment, and customer acceptance are still in progress.</p></details>
       <details id="faq-agents"><summary>Does it replace my coding agent?<svg class="faq-toggle" viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h12M10 4v12"/></svg></summary><p>The product direction is to carry useful context from supported coding-agent work into your team’s review process. The first scope is one agent integration, GitHub, and a selected repository and language environment.</p></details>
       <details id="faq-control"><summary>Who decides whether a patch ships?<svg class="faq-toggle" viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h12M10 4v12"/></svg></summary><p>Your team. Review acceptance, commit, and merge are separate human decisions. Changed revisions require a fresh review; insufficient evidence or conflicting requirements can produce a question or an abstention.</p></details>
     </div></section>
-    <section class="closing" aria-labelledby="closing-title"><div class="container closing-inner"><div><h2 id="closing-title">Bring the context.<br>Move the team forward.</h2><p>The next code change deserves the context behind it.</p></div><div class="closing-actions"><a class="button button-white" href="mailto:shanjanuary@gmail.com?subject=Coalign%20inquiry" data-contact>Get in touch<svg class="icon" aria-hidden="true"><use href="#arrow"/></svg></a><a class="text-link" href="#product">Try the review example</a><span class="contact-caption">Coalign is currently in development.</span></div><svg class="closing-brand" aria-hidden="true"><use href="#logo"/></svg></div></section>
+    <section class="closing" aria-labelledby="closing-title"><div class="container closing-inner"><div><h2 id="closing-title">Building with agents?<br>Let’s make review better.</h2><p>Tell us where your team loses context between agent work and code review. Help shape what Coalign builds next.</p></div><div class="closing-actions"><a class="button button-white" href="contact.html" data-contact>Get in touch<svg class="icon" aria-hidden="true"><use href="#arrow"/></svg></a><a class="text-link" href="#product">Try the review example</a><span class="contact-caption">Coalign is currently in development.</span></div><svg class="closing-brand" aria-hidden="true"><use href="#logo"/></svg></div></section>
   </main>
-  <footer class="footer container"><div class="footer-top"><div><a class="wordmark" href="#top" aria-label="Coalign home" translate="no"><svg class="brand-mark" aria-hidden="true"><use href="#logo"/></svg>coalign</a><p>Shared context for engineering teams.</p></div><nav aria-label="Footer navigation"><a href="#product">Product</a><a href="#questions">FAQ</a><a href="https://github.com/Coalign">GitHub</a><a href="assets/mark.svg?v=logo-2">Brand mark</a></nav></div><div class="footer-bottom"><span>© <span id="year">2026</span> Coalign</span><span><span class="status-dot"></span>In development</span></div></footer>
+  <footer class="footer container"><div class="footer-top"><div><a class="wordmark" href="#top" aria-label="Coalign home" translate="no"><svg class="brand-mark" aria-hidden="true"><use href="#logo"/></svg>coalign</a><p>Shared context for engineering teams.</p></div><nav aria-label="Footer navigation"><a href="#product">Product</a><a href="#principles">Trust &amp; control</a><a href="#questions">FAQ</a><a href="https://github.com/Coalign">GitHub</a><a href="assets/mark.svg?v=logo-2">Brand mark</a></nav></div><div class="footer-bottom"><span>© <span id="year">2026</span> Coalign</span><span><span class="status-dot"></span>In development</span></div></footer>
 </body>
 </html>

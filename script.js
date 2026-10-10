@@ -1,6 +1,6 @@
 const menuButton = document.querySelector('.menu-toggle');
 const navigation = document.getElementById('navigation');
-const tabs = [...document.querySelectorAll('[role="tab"]')];
+const tabs = [...document.querySelectorAll('.tabs [role="tab"]')];
 const questions = [...document.querySelectorAll('.faq-list details')];
 const reviewedButton = document.getElementById('mark-reviewed');
 const resetButton = document.getElementById('reset-review');

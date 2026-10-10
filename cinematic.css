@@ -1,9 +1,9 @@
 /* Coalign: a quiet black-and-white frame for visible product evidence. */
 :root { --bg: #000; --surface: #0a0a0a; --raised: #111; --line: #252525; --ink: #ededed; --muted: #a1a1a1; --signal: #9dbaff; }
-.container { width: min(1120px, calc(100% - 80px)); }
+.container { width: min(1200px, calc(100% - 80px)); }
 body { background: #000; }
 .header { background: #000f; border-bottom: 1px solid #232323; }
-.header-inner { min-height: 72px; }
+.header-inner { min-height: 64px; }
 .wordmark { font-size: 25px; font-weight: 600; letter-spacing: -.05em; gap: 9px; }
 .brand-mark { width: 30px; height: 30px; }
 .navigation { gap: 29px; }
@@ -14,13 +14,13 @@ body { background: #000; }
 .button-outline { background: #0a0a0a; border-color: #333; color: #ededed; }
 .button-outline:hover { background: #171717; border-color: #666; }
 .button-compact { min-height: 36px; font-size: 12px; padding-inline: 14px; }
-.cinematic-hero { position: relative; min-height: 750px; overflow: hidden; isolation: isolate; border-bottom: 1px solid #222; background-image: linear-gradient(#ffffff03 1px,transparent 1px),linear-gradient(90deg,#ffffff03 1px,transparent 1px); background-size: 80px 80px; }
-.hero-film { position: absolute; z-index: -2; width: max(100%, 1200px); height: 675px; top: 30px; left: 50%; transform: translateX(-50%); margin: 0; pointer-events: none; }
+.cinematic-hero { position: relative; min-height: 780px; overflow: hidden; isolation: isolate; border-bottom: 1px solid #222; background-image: linear-gradient(#ffffff07 1px,transparent 1px),linear-gradient(90deg,#ffffff07 1px,transparent 1px); background-size: 100px 100px; background-position: center top; }
+.hero-film { position: absolute; z-index: -2; width: max(100%, 1200px); height: 675px; top: 65px; left: 50%; transform: translateX(-50%); margin: 0; pointer-events: none; }
 .hero-film video { display: block; width: 100%; height: 100%; object-fit: cover; }
 .cinematic-hero::after { content: ''; position: absolute; z-index: -1; inset: 0; background: linear-gradient(#000 0%,#0000 30%,#0000 80%,#000 100%); pointer-events: none; }
-.cinematic-copy { position: relative; padding-top: 40px; text-align: center; }
-.cinematic-copy h1 { margin: 0; font-size: clamp(52px, 5.4vw, 76px); line-height: 1.08; font-weight: 550; letter-spacing: -.035em; text-wrap: balance; }
-.cinematic-description { max-width: 570px; margin: 23px auto 0; font-size: 16px; color: #a1a1a1; line-height: 1.8; }
+.cinematic-copy { position: relative; padding-top: 64px; text-align: center; }
+.cinematic-copy h1 { margin: 0; font-size: clamp(52px, 5.6vw, 80px); line-height: 1.05; font-weight: 600; letter-spacing: -.035em; text-wrap: balance; }
+.cinematic-description { max-width: 610px; margin: 24px auto 0; font-size: 18px; color: #a1a1a1; line-height: 1.65; }
 .cinematic-actions { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin-top: 25px; }
 .cinematic-bottom { position: absolute; left: 50%; bottom: 25px; transform: translateX(-50%); display: flex; justify-content: center; }
 .film-description { display: flex; align-items: center; gap: 8px; color: #999; font-size: 11px; }
@@ -135,3 +135,120 @@ html.lenis.lenis-smooth { scroll-behavior: auto !important; }
 .intent-graph .graph-card text { fill:#ddd;stroke:none;font-family:var(--sans);font-size:16px; }
 .intent-graph .graph-card .graph-caption { fill:#999;font-size:11px; }
 .intent-graph .graph-card .graph-code { font-family:ui-monospace,Consolas,monospace;font-size:15px; }
+
+/* Shared page rails and section cells follow the same content grid. */
+:root { --frame-width: 1200px; --frame-gutter: 40px; --section-inset: 40px; }
+main { position: relative; }
+main::before { content: ''; position: absolute; z-index: 2; inset: 0; width: min(var(--frame-width), calc(100% - var(--frame-gutter) * 2)); margin-inline: auto; border-inline: 1px solid var(--line); pointer-events: none; }
+main > .container { padding-inline: var(--section-inset); }
+.cinematic-hero { width: min(var(--frame-width), calc(100% - var(--frame-gutter) * 2)); margin-inline: auto; }
+.cinematic-hero .container { width: 100%; padding-inline: var(--section-inset); }
+.cinematic-hero::before { content: ''; position: absolute; inset: 0; z-index: -1; border-top: 1px solid var(--line); pointer-events: none; }
+.cinematic-bottom { color: var(--muted); }
+.context-strip { grid-template-columns: repeat(3, 1fr); gap: 0; padding-block: 0; }
+.context-strip > div { min-height: 112px; padding: 25px 24px; }
+.context-strip > div + svg + div { border-left: 1px solid var(--line); }
+.context-strip .context-connector { display: none; }
+.context-strip span { font-size: 14px; }
+.context-strip p { color: var(--muted); font-size: 12px; }
+.product-section { padding-block: 80px; }
+.section-heading h2, .faq-section h2 { font-weight: 550; }
+.section-heading p { font-size: 15px; line-height: 1.75; }
+.product-preview { border-radius: 6px; }
+.research-section { padding-block: 64px; background: #050505; }
+.value-section { padding-block: 72px; }
+.value-grid { border-color: var(--line); }
+.workflow-section { width: min(var(--frame-width), calc(100% - var(--frame-gutter) * 2)); margin-inline: auto; padding-block: 64px; background: #000; }
+.workflow-section > .container { width: 100%; padding-inline: var(--section-inset); }
+.workflow-steps { gap: 0; }
+.workflow-steps li { padding-inline: 28px; }
+.workflow-steps li:first-child { padding-left: 0; }
+.workflow-steps li:last-child { padding-right: 0; }
+.workflow-steps li + li { border-left: 1px solid var(--line); }
+.faq-section { padding-block: 72px; gap: 64px; }
+.closing { width: min(var(--frame-width), calc(100% - var(--frame-gutter) * 2)); margin-inline: auto; background: #050505; }
+.closing-inner { width: 100%; padding-inline: var(--section-inset); }
+.closing-brand { opacity: .15; }
+.footer { padding-inline: var(--section-inset); }
+body { scrollbar-color: #444 #000; }
+@media (min-width: 1700px) { .cinematic-copy { padding-top: 64px; } .hero-film { top: 65px; } }
+@media (max-width: 900px) {
+  :root { --frame-gutter: 32px; --section-inset: 28px; }
+  .cinematic-copy { padding-top: 54px; }
+  .cinematic-description { font-size: 16px; max-width: 550px; }
+  .hero-film { top: 70px; }
+  .context-strip > div { padding-inline: 14px; }
+  .context-strip span { font-size: 12px; }
+  .context-strip p { font-size: 11px; }
+  .workflow-steps li { padding-inline: 18px; }
+  .faq-section { gap: 28px; }
+}
+@media (max-width: 640px) {
+  :root { --frame-gutter: 16px; --section-inset: 20px; }
+  .container { width: calc(100% - 32px); }
+  .header-inner { padding-inline: 4px; }
+  .cinematic-hero { min-height: 670px; background-size: 64px 64px; }
+  .cinematic-copy { padding-top: 46px; }
+  .cinematic-copy h1 { font-size: clamp(32px, 8.5vw, 52px); line-height: 1.12; }
+  .cinematic-description { font-size: 14px; line-height: 1.75; max-width: 360px; }
+  .hero-film { top: 105px; }
+  .context-strip { grid-template-columns: 1fr; }
+  .context-strip > div { min-height: 84px; padding: 19px 0; }
+  .context-strip > div + svg + div { border-left: 0; border-top: 1px solid var(--line); }
+  .context-strip span { font-size: 14px; }
+  .context-strip p { font-size: 12px; }
+  .product-section, .research-section, .value-section, .faq-section { padding-block: 48px; }
+  .section-heading h2, .faq-section h2 { font-size: 28px; }
+  .section-heading p { font-size: 14px; }
+  .workflow-section { padding-block: 48px; }
+  .workflow-steps li, .workflow-steps li:first-child, .workflow-steps li:last-child { padding-inline: 0; border-left: 0; }
+  .workflow-steps li + li { padding-top: 28px; border-top: 1px solid var(--line); }
+  .closing-inner { padding-block: 48px; }
+  .closing h2 { font-size: 32px; }
+  .footer { padding-inline: 4px; }
+}
+/* Evidence and review state stay readable in the compact product example. */
+.product-preview :is(.preview-footer, .result) { font-size: 11px; }
+@media (max-width: 640px) {
+.product-preview :is(.preview-label, .mono-label, .branch-heading, .intent-type, .source-label, .context-boundary, .revision, .question-badge, .evidence-table, .evidence-table th, .evidence-table code, .origin-question, .review-bottom, .preview-footer, .checks-intro > span, .check-row small, .result, .patch-explanation, .code-diff, .tabs button) { font-size: 11px; }
+  .preview-topbar, .review-heading { flex-wrap: wrap; }
+  .branch-heading { flex-wrap: wrap; }
+  .evidence-table td, .evidence-table th { overflow-wrap: anywhere; }
+  .evidence-table td:first-child { width: 62%; }
+  .film-description, .stat-caption, .research-source { font-size: 11px; }
+}
+/* Phone layouts prioritize readable context and comfortable touch controls. */
+@media (max-width: 640px) {
+  :root { --section-inset: 16px; }
+  .cinematic-description { font-size: 16px; line-height: 1.65; }
+  .hero-film { top: 125px; }
+  .product-preview :is(.mono-label, .intent-type, .source-label, .context-boundary, .preview-label, .revision, .evidence-table, .evidence-table th, .evidence-table code, .origin-question, .review-bottom, .checks-intro > span, .check-row small, .result, .patch-explanation, .tabs button) { font-size: 12px; }
+  .intent-card h3 { font-size: 15px; }
+  .intent-card p, .review-summary p { font-size: 14px; line-height: 1.75; }
+  .review-summary h3 { font-size: 15px; }
+  .tabs { justify-content: space-between; gap: 8px; }
+  .tabs button { min-width: 44px; padding-bottom: 8px; }
+  .review-bottom .button-compact { min-height: 44px; }
+  .evidence-table td:last-child, .evidence-table th:last-child { white-space: normal; }
+  .check-row { flex-wrap: wrap; }
+  .check-row > div { flex: 1; min-width: 125px; }
+  .check-row strong { font-size: 13px; }
+  .research-stat p, .value-grid p, .workflow-steps p, .faq-list details p, .closing p { font-size: 14px; line-height: 1.75; }
+  .faq-list summary { font-size: 14px; }
+  .research-source a { display: inline-flex; align-items: center; min-height: 44px; }
+  .context-sidebar { grid-template-columns: 1fr; gap: 0; }
+  .context-sidebar > * { grid-column: 1; grid-row: auto; }
+  .branch-heading { font-size: 12px; margin-top: 20px; }
+  .intent-card { padding-bottom: 18px; }
+  .second-branch { margin-top: 12px; }
+}
+@media (pointer: coarse) {
+  .button-compact, .inline-action, .text-link, .footer-top nav a, .wordmark { min-height: 44px; }
+}
+@media (max-width: 360px) {
+  .cinematic-copy h1 { font-size: 28px; }
+  .cinematic-hero .cinematic-copy { padding-inline: 12px; }
+}
+@media (pointer: coarse) {
+  .research-source a { display: inline-flex; align-items: center; min-height: 44px; }
+}
